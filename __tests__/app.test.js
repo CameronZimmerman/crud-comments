@@ -14,7 +14,7 @@ describe('route tests', () => {
       .send({comment: 'seed data'})
   })
   
-  test.skip('should create a comment, respond with its content and send an email alert', () => {
+  test('should create a comment, respond with its content and send an email alert', () => {
     return request(app)
       .post('/api/comments')
       .send({comment: 'i love your dog'})
@@ -26,7 +26,7 @@ describe('route tests', () => {
       })
   })
 
-  test.skip('should grab all comments', () => {
+  test('should grab all comments', () => {
     return request(app)
       .get('/api/comments')
       .then((res) => {
@@ -39,9 +39,9 @@ describe('route tests', () => {
       })
   })
 
-  test.skip('should update a comment by id, respond with its content and send an email alert', () => {
+  test('should update a comment by id, respond with its content and send an email alert', () => {
     return request(app)
-      .put('/api/comments/:1')
+      .put('/api/comments/1')
       .send({comment: 'i wuv your dog'})
       .then((res) => {
         expect(res.body).toEqual({
@@ -53,10 +53,10 @@ describe('route tests', () => {
 
   test('should delete a comment by id, respond with its content and send an email alert', async () => {
     await request(app)
-    .delete('/api/comments/:1')
+    .delete('/api/comments/1')
 
     const getRes = await request(app).get('/api/comments')
 
-    expect(getRes.body).toEqual(undefined)
+    expect(getRes.body).toEqual([])
   })
 })
