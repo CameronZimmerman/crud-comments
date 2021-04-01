@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --runInBand --testLocationInResults --setupFiles dotenv/config"
+    "test": "jest --verbose --runInBand --testLocationInResults --setupFiles dotenv/config",
+    "start": "node -r dotenv/config server.js"
   },
   "jest": {
     "testEnvironment": "node"

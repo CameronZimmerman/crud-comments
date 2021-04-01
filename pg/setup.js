@@ -11,9 +11,8 @@ module.exports = () => {
     );
     `
       )
-      .finally(() => client.end())
+      // .finally(() => client.end())
     } catch (err) {
     console.log(err.message)
-    client.end()
     }
 }

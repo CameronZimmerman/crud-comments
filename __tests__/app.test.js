@@ -19,4 +19,17 @@ describe('route tests', () => {
         })
       })
   })
+
+  test('should grab all comments', () => {
+    return request(app)
+      .get('/api/comments')
+      .then((res) => {
+        expect(res.body).toEqual(
+          [{
+            id: 1,
+            comment: 'i love your dog'
+          }]
+        )
+      })
+  })
 })
