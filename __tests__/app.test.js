@@ -7,6 +7,12 @@ describe('route tests', () => {
   beforeEach(() => {
     return setup()
   })
+
+  beforeEach(async() => {
+    return await request(app)
+      .post('/api/comments')
+      .send({comment: 'seed data'})
+  })
   
   test('should create a comment, respond with its content and send an email alert', () => {
     return request(app)
@@ -14,7 +20,7 @@ describe('route tests', () => {
       .send({comment: 'i love your dog'})
       .then((res) => {
         expect(res.body).toEqual({
-          id: 1,
+          id: 2,
           comment: 'i love your dog'
         })
       })
@@ -27,7 +33,7 @@ describe('route tests', () => {
         expect(res.body).toEqual(
           [{
             id: 1,
-            comment: 'i love your dog'
+            comment: 'seed data'
           }]
         )
       })
