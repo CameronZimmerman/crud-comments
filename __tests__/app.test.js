@@ -38,4 +38,16 @@ describe('route tests', () => {
         )
       })
   })
+
+  test('should update a comment by id, respond with its content and send an email alert', () => {
+    return request(app)
+      .post('/api/comments/:1')
+      .send({comment: 'i love your dog'})
+      .then((res) => {
+        expect(res.body).toEqual({
+          id: 1,
+          comment: 'i love your dog'
+        })
+      })
+  })
 })
