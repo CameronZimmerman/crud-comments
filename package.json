@@ -1,0 +1,33 @@
+{
+  "name": "crud-comments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --runInBand --testLocationInResults --detectOpenHandles --setupFiles dotenv/config",
+    "start": "node -r dotenv/config server.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronZimmerman/crud-comments.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CameronZimmerman/crud-comments/issues"
+  },
+  "homepage": "https://github.com/CameronZimmerman/crud-comments#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "supertest": "^6.1.3"
+  }
+}
